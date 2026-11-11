@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Baby Food Gallery: Bangladesh e-commerce site (React + Vite + Tailwind frontend, Express API on Vercel serverless functions, MongoDB Atlas)",
   "engines": {
-    "node": ">=22.9"
+    "node": "22.x"
   },
   "scripts": {
     "dev": "concurrently --kill-others-on-fail -n api,web -c blue,green \"npm run dev:api\" \"vite\"",
@@ -50,5 +50,8 @@
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14",
     "vite": "^5.4.10"
+  },
+  "allowScripts": {
+    "esbuild@0.21.5": true
   }
 }
