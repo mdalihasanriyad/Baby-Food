@@ -7,7 +7,7 @@ export const safeJson = (o) => JSON.stringify(o).replace(/</g, '\\u003c').replac
 
 export function truncate(text, max = 155) {
   const t = String(text ?? '').replace(/\s+/g, ' ').trim();
-  if (t.length <= max) return t;
+  if (t.length <= max) return t; 
   const cut = t.slice(0, max - 1);
   const sp = cut.lastIndexOf(' ');
   return `${(sp > max * 0.6 ? cut.slice(0, sp) : cut).replace(/[\s,;:.-]+$/, '')}…`;
