@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@fontsource/noto-sans-bengali": "^5.1.0",
+    "@vercel/analytics": "^2.0.1",
     "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",

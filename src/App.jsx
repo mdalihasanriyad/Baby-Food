@@ -8,6 +8,7 @@ import ConsentBanner from './components/ConsentBanner.jsx';
 import OfflineBanner from './components/OfflineBanner.jsx';
 import RouteFocus from './components/RouteFocus.jsx';
 import { useLang } from './context/LanguageContext.jsx';
+import { Analytics } from "@vercel/analytics/react";
 
 const Shop = lazy(() => import('./pages/Shop.jsx'));
 const GroupPage = lazy(() => import('./pages/GroupPage.jsx'));
@@ -113,6 +114,7 @@ export default function App() {
       </main>
       <Footer />
       <ConsentBanner />
+       <Analytics />
     </div>
   );
 }
