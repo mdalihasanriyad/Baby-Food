@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    # A real MongoDB for the integration tests. It is a single server (no replica set), so these runs exercise the
+    # automatic "no transactions" fallback of order placement and cancellation. The transaction path runs on Atlas.
+    services:
+      mongo:
+        image: mongo:7
+        ports: ['27017:27017']
+        options: >-
+          --health-cmd "mongosh --quiet --eval 'db.runCommand({ping:1})'"
+          --health-interval 10s --health-timeout 5s --health-retries 10
+
+    env:
+      MONGODB_URI_TEST: mongodb://localhost:27017/bfg_test
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # Once you have committed package-lock.json, change this to `npm ci` for exact, reproducible installs.
+      - run: npm install --no-audit --no-fund
+      - name: Project consistency checks (dependencies, API contract, authorization wiring, env docs, secrets, deploy config)
+        run: npm run check
+      - name: Lint
+        run: npm run lint
+      - name: Tests (unit + database integration; fails if the database tests cannot run)
+        run: npm run test:ci
+      - name: Production build
+        run: npm run build
+      - name: Re-check deploy config against the build output (shell.html present, index.html absent)
+        run: npm run check
+      - name: Known-vulnerability scan of production dependencies (informational)
+        run: npm audit --omit=dev --audit-level=high
+        continue-on-error: true

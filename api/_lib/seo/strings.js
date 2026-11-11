@@ -1,0 +1,33 @@
+// Page-level wording for search/social metadata, in the two supported languages. Bengali is the default.
+export const S = {
+  bn: {
+    locale: 'bn_BD', brand: 'বেবি ফুড গ্যালারি',
+    tagline: 'বাংলাদেশে বেবি ফুড, ফর্মুলা ও পুষ্টিকর খাবার',
+    homeTitle: 'বেবি ফুড গ্যালারি | বাংলাদেশে বেবি ফুড, ফর্মুলা ও পুষ্টিকর খাবার',
+    homeDesc: 'বেবি ফুড, ফর্মুলা, সিরিয়াল ও পরিবারের পুষ্টিকর পণ্য — সারা বাংলাদেশে ক্যাশ অন ডেলিভারিতে।',
+    shop: 'সব পণ্য', shopDesc: 'বেবি ফুড, ফর্মুলা, সিরিয়াল, স্ন্যাক্স ও পুষ্টিকর খাবারের সব পণ্য এক জায়গায়। ক্যাশ অন ডেলিভারি।',
+    baby: 'বেবি ফুড', babyDesc: 'বেবি ফুড, ফর্মুলা, সিরিয়াল ও বেবি স্ন্যাক্সের পণ্য। সারা বাংলাদেশে ক্যাশ অন ডেলিভারি।',
+    adult: 'বড়দের খাবার ও পুষ্টি', adultDesc: 'বড়দের খাবার, পুষ্টি, সুগার-ফ্রি পণ্য এবং কফি ও পানীয়। সারা বাংলাদেশে ক্যাশ অন ডেলিভারি।',
+    about: 'আমাদের সম্পর্কে', aboutDesc: 'বেবি ফুড গ্যালারি বাংলাদেশভিত্তিক একটি অনলাইন শপ। আমাদের সম্পর্কে জানুন।',
+    contact: 'যোগাযোগ', contactDesc: 'বেবি ফুড গ্যালারির সাথে যোগাযোগ করুন: ফোন, ঠিকানা ও বার্তা পাঠানোর ফর্ম।',
+    notFound: 'পাতাটি পাওয়া যায়নি', notFoundDesc: 'পাতাটি পাওয়া যায়নি।', private: 'বেবি ফুড গ্যালারি',
+    productFallback: (name) => `${name} কিনুন বেবি ফুড গ্যালারিতে। সারা বাংলাদেশে ক্যাশ অন ডেলিভারি।`,
+    categoryFallback: (name) => `${name} — বেবি ফুড গ্যালারিতে এই ক্যাটাগরির সব পণ্য। ক্যাশ অন ডেলিভারি।`,
+    page: 'পৃষ্ঠা', inStock: 'স্টকে আছে', outOfStock: 'স্টক শেষ', home: 'হোম',
+  },
+  en: {
+    locale: 'en_US', brand: 'Baby Food Gallery',
+    tagline: 'Baby food, formula and nutrition in Bangladesh',
+    homeTitle: 'Baby Food Gallery | Baby food, formula and nutrition in Bangladesh',
+    homeDesc: 'Baby food, formula, cereals and nutrition for the whole family, delivered across Bangladesh with cash on delivery.',
+    shop: 'Shop all', shopDesc: 'All baby food, formula, cereals, snacks and nutrition products in one place. Cash on delivery.',
+    baby: 'Baby food', babyDesc: 'Baby food, formula, cereals and baby snacks. Cash on delivery across Bangladesh.',
+    adult: 'Adult food & nutrition', adultDesc: 'Adult food, nutrition, sugar-free products, coffee and beverages. Cash on delivery across Bangladesh.',
+    about: 'About us', aboutDesc: 'Baby Food Gallery is an online shop based in Bangladesh. Learn more about us.',
+    contact: 'Contact us', contactDesc: 'Contact Baby Food Gallery: phone, address and a message form.',
+    notFound: 'Page not found', notFoundDesc: 'This page could not be found.', private: 'Baby Food Gallery',
+    productFallback: (name) => `Buy ${name} at Baby Food Gallery. Cash on delivery across Bangladesh.`,
+    categoryFallback: (name) => `${name}: all products in this category at Baby Food Gallery. Cash on delivery.`,
+    page: 'Page', inStock: 'In stock', outOfStock: 'Out of stock', home: 'Home',
+  },
+};

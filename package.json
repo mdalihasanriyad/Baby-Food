@@ -1,0 +1,54 @@
+{
+  "name": "baby-food-gallery",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Baby Food Gallery: Bangladesh e-commerce site (React + Vite + Tailwind frontend, Express API on Vercel serverless functions, MongoDB Atlas)",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail -n api,web -c blue,green \"npm run dev:api\" \"vite\"",
+    "dev:api": "node --watch --env-file-if-exists=.env scripts/serve.js",
+    "build": "vite build && node scripts/postbuild.js",
+    "start": "node --env-file-if-exists=.env scripts/serve.js",
+    "lint": "node scripts/syntax-check.js && eslint src",
+    "check": "node scripts/check-project.mjs",
+    "test": "node scripts/run-tests.js",
+    "test:unit": "node scripts/run-tests.js --unit-only",
+    "test:ci": "node scripts/run-tests.js --require-db",
+    "seed": "node --env-file-if-exists=.env scripts/seed.js",
+    "create-admin": "node --env-file-if-exists=.env scripts/createAdmin.js",
+    "check-db": "node --env-file-if-exists=.env scripts/checkDb.js",
+    "check-env": "node --env-file-if-exists=.env scripts/checkEnv.js",
+    "ensure-indexes": "node --env-file-if-exists=.env scripts/ensureIndexes.js",
+    "check-cloudinary": "node --env-file-if-exists=.env scripts/checkCloudinary.js"
+  },
+  "dependencies": {
+    "@fontsource/noto-sans-bengali": "^5.1.0",
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.1",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.24.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.0.1",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "globals": "^15.11.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "vite": "^5.4.10"
+  }
+}

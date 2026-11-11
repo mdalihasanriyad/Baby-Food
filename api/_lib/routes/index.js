@@ -1,0 +1,28 @@
+import { Router } from 'express';
+import categories from './categories.js';
+import products from './products.js';
+import settings from './settings.js';
+import contact from './contact.js';
+import auth from './auth.js';
+import admin from './admin.js';
+import home from './home.js';
+import wishlist from './wishlist.js';
+import cart from './cart.js';
+import checkout from './checkout.js';
+import orders from './orders.js';
+import account from './account.js';
+
+const router = Router();
+router.use('/categories', categories);
+router.use('/products', products);
+router.use('/settings', settings);
+router.use('/contact', contact);
+router.use('/auth', auth);
+router.use('/admin', admin);
+router.use('/home', home);
+router.use('/wishlist', wishlist);
+router.use('/cart', cart);
+router.use('/checkout', checkout);
+router.use('/orders', orders);
+router.use('/account', account);
+export default router;
